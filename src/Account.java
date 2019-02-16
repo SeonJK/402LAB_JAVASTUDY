@@ -62,7 +62,7 @@ public class Account {
        }else if(money<=0){
             System.out.println("돈의 액수가 올바르지 않습니다.");
        }else{
-             setBalance(getBalance() + money);
+             this.setBalance(getBalance() + money);
              System.out.println("계좌 내 현재 잔액: " + this.balance);
         }
     }
@@ -81,7 +81,7 @@ public class Account {
         }
         else {
             dstUserAcnt.setBalance(getBalance() + sendMoney);
-            setBalance(getBalance() - sendMoney);
+            this.setBalance(getBalance() - sendMoney);
             System.out.println("계좌 내 현재 잔액: " + this.balance);
         }
     }
