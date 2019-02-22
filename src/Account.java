@@ -1,10 +1,24 @@
 public class Account {
+	
+	//TODO: 왠만하면 약자는 
+	//		1. 팀원들과 미리 약속되거나
+	//		2. 대표적으로 사용되는 약자인 경우 (ex : passwd)
+	//		
+	//		가 아니라면 사용하지 않습니다.
+	//		변수명은 너무 긴것이 아닌 이상 풀네임으로 써주세요
+	//		
+	
+	
     private String name;
+	
+	//해당 변수명은 가독성을 떨어트립니다.
     private String accNum;
+	
     private String passwd;
     private int balance;
 
-
+	//TODO: 해당 방식은 초기화 값이 조건에 맞지 않는 경우에도 객체를 생성하게 됩니다.
+	//		다른 방식으로 생성자를 만들어 보세요 (힌트 : static 생성자)
     public Account(String name, String accNum, String passwd){
         if(accNum.length() != 13){
             System.out.println("계좌번호 형식이 맞지 않습니다. 000000-000000 형식으로 작성해주세요.");
@@ -53,7 +67,7 @@ public class Account {
             return false;
         }
     }
-
+	
     public void deposit(int money, String passwd){
 //        isPasswdCorrect(passwd);
 
