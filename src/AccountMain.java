@@ -12,8 +12,8 @@ public class AccountMain {
         System.out.println(A.getName());
         System.out.println(B.getName());
 
-        System.out.println(A.getAccNum());
-        System.out.println(B.getAccNum());
+        System.out.println(A.getAccountNum());
+        System.out.println(B.getAccountNum());
 
         A.deposit(10000, "123456");
         B.deposit(20000, "123123");

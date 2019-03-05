@@ -10,26 +10,25 @@ public class Account {
 	
 	
     private String name;
-	
-	//해당 변수명은 가독성을 떨어트립니다.
-    private String accNum;
+
+    private String accountNum;
 	
     private String passwd;
     private int balance;
 
 	//TODO: 해당 방식은 초기화 값이 조건에 맞지 않는 경우에도 객체를 생성하게 됩니다.
 	//		다른 방식으로 생성자를 만들어 보세요 (힌트 : static 생성자)
-    public Account(String name, String accNum, String passwd){
-        if(accNum.length() != 13){
+    public Account(String name, String accountNum, String passwd){
+        if(accountNum.length() != 13){
             System.out.println("계좌번호 형식이 맞지 않습니다. 000000-000000 형식으로 작성해주세요.");
-//        if(!accNum.equals("/^[0-9]{6}-[0-9]{6}$")){
+//        if(!accountNum.equals("/^[0-9]{6}-[0-9]{6}$")){
 //            System.out.println("계좌번호 형식이 맞지 않습니다. 000000-000000 형식으로 작성해주세요.");
         }else{
             this.name = name;
-            this.accNum = accNum;
+            this.accountNum = accountNum;
             this.passwd = passwd;
         }
-    };
+    }
 
 
     public String getName(){
@@ -39,11 +38,11 @@ public class Account {
         this.name = name;
     }
 
-    public String getAccNum(){
-        return accNum;
+    public String getAccountNum(){
+        return accountNum;
     }
-//    public void setAccNum(int accNum){
-//        this.accNum = accNum;
+//    public void setAccNum(int accountNum){
+//        this.accountNum = accountNum;
 //    }
 
 //    public String getPasswd(){
@@ -69,8 +68,6 @@ public class Account {
     }
 	
     public void deposit(int money, String passwd){
-//        isPasswdCorrect(passwd);
-
         if(!isPasswdCorrect(passwd)){
            System.out.println("비밀번호가 일치하지 않습니다.");
        }else if(money<=0){
@@ -82,8 +79,6 @@ public class Account {
     }
 
     public void sendMoney(int sendMoney, String passwd, Account dstUserAcnt){
-//        isPasswdCorrect(passwd);
-
         if(!isPasswdCorrect(passwd)){
             System.out.println("비밀번호가 일치하지 않습니다.");
         }else if(sendMoney<=0){
@@ -99,6 +94,4 @@ public class Account {
             System.out.println("계좌 내 현재 잔액: " + this.balance);
         }
     }
-
-
 }
